@@ -1,5 +1,6 @@
 import art
 print(art.logo)
+
 def add(n1, n2):
     return n1 + n2
 
@@ -21,14 +22,21 @@ operations = {
     "/": divide
 }
 
+def display_operations():
+    for symbol in operations:
+        print(symbol)
+
+
 should_accumulate = True
 result = 0
 num1 = float(input("What is the first number?: "))
 tasks = []
 index = 0
 while should_accumulate:
+
     is_first_index = index == 0
     num2 = float(input("What is the next number?: "))
+    display_operations()
     operation_symbol = input("Pick an operation: ")
     if operation_symbol not in operations:
         print("unknown operation!")
@@ -45,5 +53,3 @@ while should_accumulate:
         should_accumulate = False
 
     index += 1
-
-
